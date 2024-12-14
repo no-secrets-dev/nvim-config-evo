@@ -1,4 +1,3 @@
--- In lua/plugins/noice.lua
 return {
   "folke/noice.nvim",
   dependencies = {
@@ -9,7 +8,7 @@ return {
     cmdline = {
       enabled = true,
       view = "cmdline_popup",
-      opts = { -- These are the options for the popup window
+      opts = {
         position = {
           row = 2,
           col = "50%",
@@ -38,6 +37,17 @@ return {
       progress = { enabled = false },
       hover = { enabled = false },
       signature = { enabled = false },
+    },
+    -- Add routes configuration to filter out "written" messages
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "written",
+        },
+        opts = { skip = true },
+      },
     },
   },
 }

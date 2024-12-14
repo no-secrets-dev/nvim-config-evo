@@ -1,8 +1,8 @@
 local map = vim.keymap.set
 
 -- Fuzzy finding
-map('n', '<C-p>', "<cmd>lua require('fzf-lua').files()<CR>")
-map('n', '<C-f>', "<cmd>lua require('fzf-lua').live_grep()<CR>")
+map('n', '<C-f>', "<cmd>lua require('fzf-lua').files()<CR>")
+map('n', '<C-g>', "<cmd>lua require('fzf-lua').live_grep()<CR>")
 map('n', '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>")
 
 -- LSP
@@ -11,8 +11,9 @@ map('n', 'gr', vim.lsp.buf.references)
 map('n', 'K', vim.lsp.buf.hover)
 
 -- Terminal
-map('n', '<C-/>', '<cmd>ToggleTerm<CR>')
-map('t', '<C-/>', '<cmd>ToggleTerm<CR>')
+map('n', '<C-_>', '<cmd>ToggleTerm<CR>')
+-- map('i', '<C-_>', '<cmd>ToggleTerm<CR>')
+map('t', '<C-_>', '<cmd>ToggleTerm<CR>')
 
 -- -- In lua/config/keymaps.lua
 -- vim.api.nvim_create_user_command('W', function()

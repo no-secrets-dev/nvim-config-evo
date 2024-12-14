@@ -5,9 +5,13 @@ opt.number = true
 opt.relativenumber = true
 opt.wrap = false
 opt.expandtab = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.autoindent = true
+vim.opt.expandtab = true      -- Convert tabs to spaces
+vim.opt.smartindent = true    -- Smart autoindenting on new lines
+vim.opt.autoindent = true     -- Copy indent from current line when starting a new line
+vim.opt.cindent = true        -- Stricter indenting rules for C-like languages
+vim.opt.tabstop = 4           -- Number of spaces a tab counts for
+vim.opt.shiftwidth = 4        -- Size of an indent
+
 opt.mouse = 'a'
 opt.termguicolors = true
 opt.clipboard = 'unnamedplus'
@@ -35,3 +39,14 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.confirm = true  -- Shows confirmation dialog
+
+-- In lua/config/options.lua or similar config file
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    -- Light blue highlight for visual selection
+    vim.api.nvim_set_hl(0, "Visual", {
+      bg = "#3e68d7",  -- Light blue background
+      fg = "#ffffff",  -- White text for contrast
+    })
+  end,
+})
