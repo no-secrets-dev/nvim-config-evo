@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- comment color
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
-    vim.api.nvim_set_hl(0, "Comment", { fg = "#BB6666", italic = true })
+    vim.api.nvim_set_hl(0, "Comment", { fg = "#999999", italic = true })
   end,
 })
 
