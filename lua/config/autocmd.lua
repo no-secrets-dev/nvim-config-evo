@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end
 })
 
+-- comment color
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "Comment", { fg = "#BB6666", italic = true })
+  end,
+})
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function()
