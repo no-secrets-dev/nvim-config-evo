@@ -24,6 +24,12 @@ return {
             rust_analyzer = {
                 settings = {
                     ["rust-analyzer"] = {
+                        diagnostics = {
+                            enable = false,
+                        },
+                        inlayHints = {
+                            enable = false,
+                        },
                         checkOnSave = {
                             command = "clippy",
                         },
@@ -31,7 +37,7 @@ return {
                             allFeatures = true,
                         },
                         procMacro = {
-                            enable = true,
+                            enable = false,
                         },
                     },
                 },
