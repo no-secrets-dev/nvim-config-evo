@@ -49,6 +49,13 @@ return {
         opts = { skip = true },
       },
     },
+    config = function(_, opts)
+        require("noice").setup(opts)
+
+        -- Set custom highlight for line numbers
+        vim.api.nvim_set_hl(0, 'LineNr', { fg = '#00FFFF'})
+        vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#00FFFF', bold = true })
+    end,
   },
 }
 

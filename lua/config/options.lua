@@ -12,6 +12,10 @@ vim.opt.cindent = true        -- Stricter indenting rules for C-like languages
 vim.opt.tabstop = 4           -- Number of spaces a tab counts for
 vim.opt.shiftwidth = 4        -- Size of an indent
 
+-- case insensitive search by default 
+vim.opt.ignorecase = true
+-- vim.opt.smartcase = true
+
 opt.mouse = 'a'
 opt.termguicolors = true
 opt.clipboard = 'unnamedplus'
@@ -22,10 +26,13 @@ local opt = vim.opt
 -- Basic wrapping settings
 opt.wrap = true           -- Enable line wrapping
 opt.linebreak = true      -- Break lines at word boundaries
-opt.breakindent = true    -- Preserve indentation in wrapped text
+-- vim.opt.colorcolumn = "80"  -- Shows a vertical line at column 80
+-- opt.breakindent = true    -- Preserve indentation in wrapped text
 opt.showbreak = "↪ "      -- Show wrap indicator
-opt.textwidth = 80        -- Set text width for hard wrapping
+opt.textwidth = 0        -- Set text width for hard wrapping
+vim.opt.wrapmargin = 0
 opt.formatoptions = "tcqjl"  -- Control auto-formatting
+opt.formatoptions = opt.formatoptions - "t" + "q"
 
 -- For LaTeX files specifically
 vim.api.nvim_create_autocmd("FileType", {

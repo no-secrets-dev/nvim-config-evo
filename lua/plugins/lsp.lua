@@ -13,7 +13,7 @@ return {
                 "gopls",
                 "ts_ls",
                 "solidity",  -- Changed from solc
-                "texlab",
+                -- "texlab",
             },
         })
 
@@ -44,7 +44,7 @@ return {
             },
             gopls = {},
             ts_ls = {},
-            texlab = {},
+            -- texlab = {},
         }
 
         -- Setup all servers with their specific configs
