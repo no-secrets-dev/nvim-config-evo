@@ -4,6 +4,11 @@ local map = vim.keymap.set
 map('n', '<C-f>', "<cmd>lua require('fzf-lua').files()<CR>")
 map('n', '<C-g>', "<cmd>lua require('fzf-lua').live_grep()<CR>")
 map('n', '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>")
+--
+vim.keymap.set('n', '<C-p>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<C-Right>', ':vertical resize +5<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-Left>', ':vertical resize -5<CR>', { noremap = true, silent = true })
 
 -- LSP
 map('n', 'gd', vim.lsp.buf.definition)
@@ -12,6 +17,7 @@ map('n', 'K', vim.lsp.buf.hover)
 
 -- Terminal
 map('n', '<C-_>', '<cmd>ToggleTerm<CR>')
+--
 -- map('i', '<C-_>', '<cmd>ToggleTerm<CR>')
 map('t', '<C-_>', '<cmd>ToggleTerm<CR>')
 
