@@ -33,6 +33,11 @@ return {
                     guibg = "#2A2A2A",
                 },
             },
+            start_in_insert = true,
+            persist_mode = false,
+            on_open = function(term)
+                vim.cmd("startinsert!")
+            end,
         })
 
         -- Try different key representations
