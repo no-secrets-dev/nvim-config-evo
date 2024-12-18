@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+-- mapleader
+vim.g.mapleader = " "
 -- Basic editor options
 opt.number = true
 opt.relativenumber = true
@@ -27,7 +29,7 @@ local opt = vim.opt
 opt.wrap = true           -- Enable line wrapping
 opt.linebreak = true      -- Break lines at word boundaries
 -- vim.opt.colorcolumn = "80"  -- Shows a vertical line at column 80
--- opt.breakindent = true    -- Preserve indentation in wrapped text
+-- opt.breakindent = true    -- Preserve indentation in wrapped texg
 opt.showbreak = "↪ "      -- Show wrap indicator
 opt.textwidth = 0        -- Set text width for hard wrapping
 vim.opt.wrapmargin = 0
