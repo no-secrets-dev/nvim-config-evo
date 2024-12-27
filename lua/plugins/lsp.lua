@@ -12,7 +12,7 @@ return {
                 "rust_analyzer",
                 "gopls",
                 "ts_ls",
-                "solidity",  -- Changed from solc
+                -- "solidity",  -- Changed from solc
                 -- "texlab",
             },
         })
@@ -42,12 +42,12 @@ return {
                     },
                 },
             },
-            solidity = {
-                cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-                filetypes = { "solidity", "yul" },
-                root_dir = require("lspconfig.util").root_pattern("foundry.toml", "hardhat.config.*", ".git"),
-                single_file_support = true,
-            },
+            -- solidity = {
+            --     cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+            --     filetypes = { "solidity", "yul" },
+            --     root_dir = require("lspconfig.util").root_pattern("foundry.toml", "hardhat.config.*", ".git"),
+            --     single_file_support = true,
+            -- },
             gopls = {},
             ts_ls = {},
             -- texlab = {},

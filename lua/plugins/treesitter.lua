@@ -17,6 +17,7 @@ return {
                 "gowork",
                 "gosum",
                 "hcl",
+                "dot",
             },
 
             highlight = { 
