@@ -18,7 +18,7 @@ return {
         })
 
         local lspconfig = require("lspconfig")
-        
+
         -- Individual server configurations
         local servers = {
             rust_analyzer = {
@@ -30,16 +30,10 @@ return {
                         inlayHints = {
                             enable = false,
                         },
-                        checkOnSave = {
-                            command = "clippy",
-                        },
-                        cargo = {
-                            allFeatures = true,
-                        },
-                        procMacro = {
-                            enable = false,
-                        },
                     },
+                },
+                handlers = {
+                    ["textDocument/publishDiagnostics"] = function() end,
                 },
             },
             -- solidity = {
