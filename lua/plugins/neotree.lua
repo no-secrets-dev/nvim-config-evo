@@ -16,13 +16,11 @@ return {
                     enabled = true,
                 },
                 hijack_netrw_behavior = "open_default",
-                filesystem = {
-                    filtered_items = {
-                        visible = true,
-                        hide_dotfiles = false,
-                        hide_gitignored = false,
-                        hide_hidden = false,
-                    },
+                filtered_items = {
+                    visible = true,
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    hide_hidden = false,
                 },
             },
             window = {
@@ -57,6 +55,8 @@ return {
 
         -- Map Space+Shift+E to toggle Neo-tree
         vim.keymap.set('n', '<Space>E', ':Neotree toggle<CR>', { silent = true })
+
+        vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#c0caf5" })
     end
 }
 

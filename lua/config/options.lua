@@ -13,6 +13,7 @@ vim.opt.autoindent = true     -- Copy indent from current line when starting a n
 vim.opt.cindent = true        -- Stricter indenting rules for C-like languages
 vim.opt.tabstop = 4           -- Number of spaces a tab counts for
 vim.opt.shiftwidth = 4        -- Size of an indent
+vim.opt.hlsearch = false
 
 -- case insensitive search by default 
 vim.opt.ignorecase = true
@@ -59,3 +60,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     })
   end,
 })
+
+vim.g.editorconfig = false
+vim.opt.termsync = false
+vim.cmd('set noequalalways')

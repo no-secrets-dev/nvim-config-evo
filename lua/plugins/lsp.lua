@@ -18,6 +18,18 @@ return {
         })
 
         local lspconfig = require("lspconfig")
+        local configs = require("lspconfig.configs")
+        -- Register circom as a custom server
+        if not configs.circom then
+            configs.circom = {
+                default_config = {
+                    cmd = { "circom-lsp" },
+                    filetypes = { "circom" },
+                    root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
+                    settings = {},
+                },
+            }
+        end
 
         -- Individual server configurations
         local servers = {
@@ -45,6 +57,11 @@ return {
             gopls = {},
             ts_ls = {},
             -- texlab = {},
+            circom = {
+                cmd = { "circom-lsp" },
+                filetypes = { "circom" },
+                root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
+            },
         }
 
         -- Setup all servers with their specific configs
