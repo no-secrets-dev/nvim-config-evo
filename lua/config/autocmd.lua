@@ -33,3 +33,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+vim.api.nvim_create_user_command('Pcc', function()
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied path: ' .. path)
+end, {})
+
+vim.api.nvim_create_user_command('Pcr', function()
+  local relative_path = vim.fn.fnamemodify(vim.fn.expand('%'), ':.')
+  vim.fn.setreg('+', relative_path)
+  vim.notify('Copied relative path: ' .. relative_path)
+end, {})
