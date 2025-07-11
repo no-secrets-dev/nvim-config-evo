@@ -61,6 +61,21 @@ return {
         vim.keymap.set("n", "<C-x>", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
         vim.keymap.set('n', '<A-h>', ':BufferLineMovePrev<CR>')
         vim.keymap.set('n', '<A-l>', ':BufferLineMoveNext<CR>')
+        vim.keymap.set("n", "<C-x>", function()
+            local buffers = vim.fn.getbufinfo({buflisted = 1})
+            local current_buf = vim.api.nvim_get_current_buf()
+
+            if #buffers > 1 then
+                pcall(vim.cmd, "BufferLineCycleNext")
+                pcall(vim.cmd, "bdelete! " .. current_buf)
+            else
+                -- Last buffer - create new empty buffer and delete the old one
+                pcall(vim.cmd, "enew")
+                if vim.api.nvim_buf_is_valid(current_buf) then
+                    pcall(vim.cmd, "bdelete! " .. current_buf)
+                end
+            end
+        end, { desc = "Close current buffer" })
     end,
 }
 
