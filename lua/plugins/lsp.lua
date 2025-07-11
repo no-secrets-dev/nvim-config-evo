@@ -33,21 +33,21 @@ return {
 
         -- Individual server configurations
         local servers = {
-            rust_analyzer = {
-                settings = {
-                    ["rust-analyzer"] = {
-                        diagnostics = {
-                            enable = false,
-                        },
-                        inlayHints = {
-                            enable = false,
-                        },
-                    },
-                },
-                handlers = {
-                    ["textDocument/publishDiagnostics"] = function() end,
-                },
-            },
+            -- rust_analyzer = {
+            --     settings = {
+            --         ["rust-analyzer"] = {
+            --             diagnostics = {
+            --                 enable = false,
+            --             },
+            --             inlayHints = {
+            --                 enable = false,
+            --             },
+            --         },
+            --     },
+            --     handlers = {
+            --         ["textDocument/publishDiagnostics"] = function() end,
+            --     },
+            -- },
             -- solidity = {
             --     cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
             --     filetypes = { "solidity", "yul" },

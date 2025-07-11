@@ -44,3 +44,11 @@ vim.api.nvim_create_user_command('Pcr', function()
   vim.fn.setreg('+', relative_path)
   vim.notify('Copied relative path: ' .. relative_path)
 end, {})
+
+vim.api.nvim_create_autocmd({"TextChanged", "TextChangedI"}, {
+  pattern = "*.md",
+  callback = function()
+    vim.cmd("silent! write")
+  end,
+  desc = "Auto-save markdown files when editing",
+})

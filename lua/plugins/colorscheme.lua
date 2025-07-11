@@ -1,23 +1,15 @@
--- In lua/plugins/colorscheme.lua
 return {
   {
-    "folke/tokyonight.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-      style = "moon", -- Choose between 'storm', 'moon', 'night' and 'day'
-      transparent = false,
-      terminal_colors = true,
-      styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
-        sidebars = "dark",
-        floats = "dark",
-      },
+      transparent_mode = true,
+      contrast = "hard", -- soft, medium, hard
     },
-    config = function()
-      vim.cmd[[colorscheme tokyonight]]
+    config = function(_, opts)
+      require("gruvbox").setup(opts)
+      vim.cmd.colorscheme("gruvbox")
     end,
   },
 }
-
