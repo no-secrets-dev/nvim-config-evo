@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 -- Fuzzy finding
 map('n', '<C-f>', "<cmd>lua require('fzf-lua').files()<CR>")
-map('n', '<C-g>', "<cmd>lua require('fzf-lua').live_grep()<CR>")
+map('n', '<C-g>', "<cmd>lua require('fzf-lua').live_grep_glob()<CR>")
 map('n', '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>")
 --
 vim.keymap.set('n', '<C-p>', ':Neotree toggle<CR>', { noremap = true, silent = true })
