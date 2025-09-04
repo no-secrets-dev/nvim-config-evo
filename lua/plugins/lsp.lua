@@ -12,6 +12,7 @@ return {
                 "rust_analyzer",
                 "gopls",
                 "ts_ls",
+                -- "nil_ls",  -- Using system-installed nil instead
                 -- "solidity",  -- Changed from solc
                 -- "texlab",
             },
@@ -56,6 +57,7 @@ return {
             -- },
             gopls = {},
             ts_ls = {},
+            nil_ls = {},
             -- texlab = {},
             circom = {
                 cmd = { "circom-lsp" },

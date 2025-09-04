@@ -1,20 +1,20 @@
--- return {
---   "folke/tokyonight.nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     require("tokyonight").setup({
---       style = "storm",  -- night, moon, storm, day
---       transparent = true,
---       terminal_colors = true,
---       styles = {
---         sidebars = "transparent",
---         floats = "transparent",
---       }
---     })
---     vim.cmd("colorscheme tokyonight")
---   end,
--- }
+return {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("tokyonight").setup({
+      style = "storm",  -- night, moon, storm, day
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      }
+    })
+    vim.cmd("colorscheme tokyonight")
+  end,
+}
 -- return {
 --   "rebelot/kanagawa.nvim",
 --   lazy = false,
@@ -68,21 +68,21 @@
 --     vim.cmd("colorscheme catppuccin")
 --   end,
 -- }
-return {
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent_mode = true,
-      contrast = "hard", -- soft, medium, hard
-    },
-    config = function(_, opts)
-      require("gruvbox").setup(opts)
-      vim.cmd.colorscheme("gruvbox")
-    end,
-  },
-}
+-- return {
+--   {
+--     "ellisonleao/gruvbox.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       transparent_mode = true,
+--       contrast = "hard", -- soft, medium, hard
+--     },
+--     config = function(_, opts)
+--       require("gruvbox").setup(opts)
+--       vim.cmd.colorscheme("gruvbox")
+--     end,
+--   },
+-- }
 -- return {
 --   {
 --     "projekt0n/github-nvim-theme",
@@ -103,6 +103,147 @@ return {
 --     config = function(_, opts)
 --       require("github-theme").setup(opts)
 --       vim.cmd.colorscheme("github_dark_colorblind")
+--     end,
+--   },
+-- }
+
+-- return {
+--   {
+--     "craftzdog/solarized-osaka.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       transparent = true, -- Set to true if you want transparency
+--       terminal_colors = true,
+--       styles = {
+--         comments = { italic = true },
+--         keywords = { italic = true },
+--         functions = {},
+--         variables = {},
+--         sidebars = "dark", -- "dark", "transparent" or "normal"
+--         floats = "dark",
+--       },
+--       sidebars = { "qf", "help", "neo-tree", "terminal", "packer" },
+--       day_brightness = 0.3, -- Adjusts brightness of Day style
+--       hide_inactive_statusline = false,
+--       dim_inactive = false,
+--       lualine_bold = true,
+--
+--       -- Customize colors if needed
+--       on_colors = function(colors)
+--         -- Example: make comments brighter
+--         -- colors.comment = colors.blue
+--       end,
+--
+--       -- Customize highlights if needed
+--       on_highlights = function(highlights, colors)
+--         -- Example customizations:
+--         -- highlights.LineNr = { fg = colors.blue }
+--         -- highlights.CursorLineNr = { fg = colors.cyan, bold = true }
+--       end,
+--     },
+--     config = function(_, opts)
+--       require("solarized-osaka").setup(opts)
+--       vim.cmd.colorscheme("solarized-osaka")
+--     end,
+--   },
+-- }
+-- return {
+--   {
+--     "ellisonleao/gruvbox.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       terminal_colors = true,
+--       undercurl = true,
+--       underline = true,
+--       bold = true,
+--       italic = {
+--         strings = false,
+--         emphasis = true,
+--         comments = true,
+--         operators = false,
+--         folds = true,
+--       },
+--       strikethrough = true,
+--       invert_selection = false,
+--       invert_signs = false,
+--       invert_tabline = false,
+--       invert_intend_guides = false,
+--       inverse = false,
+--       contrast = "hard", -- hard contrast
+--       palette_overrides = {
+--         -- Make dark backgrounds even darker for higher contrast
+--         dark0_hard = "#0d1011",  -- Darker than default #1d2021
+--         dark0 = "#1d2021",       -- Keep medium dark
+--         dark0_soft = "#282828",  -- Default soft
+--         dark1 = "#3c3836",
+--         dark2 = "#504945",
+--
+--         -- Brighten the foreground colors for better contrast
+--         light0_hard = "#f9f5d7",  -- Brighter than default
+--         light0 = "#fbf1c7",       
+--         light1 = "#ebdbb2",       -- Default light
+--         light2 = "#d5c4a1",
+--
+--         -- Make accent colors more vibrant
+--         bright_red = "#ff2222",     -- More vibrant red
+--         bright_green = "#b8ff26",   -- Brighter green
+--         bright_yellow = "#ffff00",  -- Pure yellow
+--         bright_blue = "#83d8ff",    -- Brighter blue
+--         bright_purple = "#ff83ff",  -- Brighter purple
+--         bright_aqua = "#8fffff",    -- Brighter aqua
+--         bright_orange = "#ff9500",  -- Brighter orange
+--       },
+--       overrides = {
+--         -- Force higher contrast for specific elements
+--         Normal = { bg = "#0d1011", fg = "#f9f5d7" },  -- Maximum contrast
+--         NormalFloat = { bg = "#1d2021" },
+--         CursorLine = { bg = "#282828" },
+--         CursorLineNr = { fg = "#ffff00", bold = true },  -- Bright yellow line numbers
+--         LineNr = { fg = "#7c6f64" },  -- Slightly brighter line numbers
+--
+--         -- Make comments more readable but still distinguished
+--         Comment = { fg = "#928374", italic = true },  -- Brighter gray
+--
+--         -- Higher contrast for search and selection
+--         Search = { bg = "#fabd2f", fg = "#0d1011" },
+--         Visual = { bg = "#45403d" },
+--
+--         -- Better contrast for diagnostic messages
+--         DiagnosticError = { fg = "#ff2222" },
+--         DiagnosticWarn = { fg = "#ffff00" },
+--         DiagnosticInfo = { fg = "#83d8ff" },
+--         DiagnosticHint = { fg = "#8fffff" },
+--
+--         -- Status line with higher contrast
+--         StatusLine = { bg = "#3c3836", fg = "#ebdbb2" },
+--         StatusLineNC = { bg = "#1d2021", fg = "#7c6f64" },
+--       }
+--     },
+--     config = function(_, opts)
+--       require("gruvbox").setup(opts)
+--       vim.cmd.colorscheme("gruvbox")
+--
+--       -- Additional overrides after theme loads
+--       vim.api.nvim_set_hl(0, "Visual", { bg = "#45403d", fg = "NONE" })
+--       vim.api.nvim_set_hl(0, "MatchParen", { bg = "#665c54", bold = true })
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "#1d2021", fg = "#ebdbb2" })
+--       vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#45403d", fg = "#fbf1c7" })
+--     end,
+--   },
+-- }
+-- return {
+--   {
+--     "abreujp/scholar.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       require("scholar").setup({
+--         -- Scholar specific options if any
+--       })
+--       vim.o.background = "dark"  -- Scholar has both light and dark
+--       vim.cmd.colorscheme("scholar")
 --     end,
 --   },
 -- }
